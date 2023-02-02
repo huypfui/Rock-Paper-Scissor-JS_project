@@ -60,6 +60,7 @@ function cpuTurn() {
 const maxRound = () =>{
     if(fiveRounds.checked){
         maxRoundCount = 5;
+        return
     }else if(tenRounds.checked){
         maxRoundCount = 10;
         return
@@ -73,31 +74,31 @@ const maxRound = () =>{
     }
 };
 
+const overallScore = () => {
+    if (playerScore > cpuScore){
+        roundHidden.style.color = 'green';
+        roundHidden.innerHTML = "YOU WIN!";
+    }else if (playerPoint < cpuPoint){
+        roundHidden.style.color = 'red';
+        roundHidden.innerHTML = "YOU LOSE!";
+    }else{
+        roundHidden.innerHTML = "IT'S A DRAW!";
+}}
+
 //* Runden function
 const userRound = () => {
     roundCount++;
     let counterZahl = roundCount.toString();
     roundHidden.innerHTML = `${counterZahl} / ${maxRoundCount.toString()}`;
 
-/*     if (roundCount === maxRoundCount) {
+    if (roundCount === maxRoundCount) {
         overallScore();
-        form.style.display = 'none';
-        hiddenSection.style.display = 'flex';
-    } else{} */
+        resultText.style.display = 'none';
+    } else{}
 }
 
 //* Textanzeige function
 
-/* const overallScore = () => {
-    if (playerPoint > cpuPoint){
-        finalResult.style.color = 'green';
-        finalResult.innerHTML = "YOU WIN!";
-    }else if (playerPoint < cpuPoint){
-        finalResult.style.color = 'red';
-        finalResult.innerHTML = "YOU LOSE!";
-    }else{
-        finalResult.innerHTML = "IT'S A DRAW!";
-}} */
 
 btnRock.addEventListener("click", (event) =>{
     const userInput = btnRock.value;

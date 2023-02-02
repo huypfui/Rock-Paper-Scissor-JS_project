@@ -25,11 +25,16 @@ section {
 }
 
 #roundsForm {
+  margin-bottom: 50px;
+}
+
+#roundsFormSection {
   align-items: center;
+  margin-top: 50px;
 }
 
 /* hidden Rounds Counter */
-#roundcounter {
+#hiddenRound {
   display: none;
   /* display:block; damit es wieder erscheint */
 }
