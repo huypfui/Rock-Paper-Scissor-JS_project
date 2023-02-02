@@ -33,7 +33,7 @@ const hiddenSection = document.querySelector("#hiddenSection")
 const roundHidden = document.querySelector("#hiddenRound");
 
 //* Rock Paper Scissor Button Variablen
-const allButtons = document.querySelector(".buttons");
+const allButtons = document.querySelector(".buttonsSection");
 const btnRock = document.querySelector("#rock");
 const btnPaper = document.querySelector("#paper");
 const btnScissor = document.querySelector("#scissor");
@@ -93,6 +93,7 @@ const userRound = () => {
 
     if (roundCount === maxRoundCount) {
         overallScore();
+        allButtons.style.display = 'none';
         resultText.style.display = 'none';
     } else{}
 }
@@ -124,7 +125,69 @@ btnRock.addEventListener("click", (event) =>{
     } else if (cpuInput === "Paper"){
         cpuPoint++;
         cpuScore.innerHTML = cpuPoint.toString();
-        resultText.innerHTML=`You chose ` + btnRock.value + ` and the Computer chose ` + cpuInput + `. YOU LOSE!`;
+        resultText.innerHTML=`You chose ` + userInput + ` and the Computer chose ` + cpuInput + `. YOU LOSE!`;
+        return
+    } else {
+        resultText.innerHTML= `DRAW!`;
+    }
+})
+
+btnPaper.addEventListener("click", (event) =>{
+    const userInput = btnPaper.value;
+    const cpuInput = cpuTurn();
+
+    event.preventDefault();
+    maxRound();
+
+    if (maxRoundCount === 0){
+        resultText.innerHTML = "Please select how many rounds you want to play";
+        return
+    }else{
+    userRound()} // round counter
+
+    form.style.display = "none";
+    roundHidden.style.display = "block";
+
+    if (cpuInput === "Rock"){
+        playerPoint++;
+        playerScore.innerHTML = playerPoint.toString();
+        resultText.innerHTML= `You chose ` + userInput + ` and the Computer chose ` + cpuInput +`. You WIN!`;
+        return
+    } else if (cpuInput === "Scissor"){
+        cpuPoint++;
+        cpuScore.innerHTML = cpuPoint.toString();
+        resultText.innerHTML=`You chose ` + userInput + ` and the Computer chose ` + cpuInput + `. YOU LOSE!`;
+        return
+    } else {
+        resultText.innerHTML= `DRAW!`;
+    }
+})
+
+btnScissor.addEventListener("click", (event) =>{
+    const userInput = btnScissor.value;
+    const cpuInput = cpuTurn();
+
+    event.preventDefault();
+    maxRound();
+
+    if (maxRoundCount === 0){
+        resultText.innerHTML = "Please select how many rounds you want to play";
+        return
+    }else{
+    userRound()} // round counter
+
+    form.style.display = "none";
+    roundHidden.style.display = "block";
+
+    if (cpuInput === "Paper"){
+        playerPoint++;
+        playerScore.innerHTML = playerPoint.toString();
+        resultText.innerHTML= `You chose ` + userInput + ` and the Computer chose ` + cpuInput +`. You WIN!`;
+        return
+    } else if (cpuInput === "Rock"){
+        cpuPoint++;
+        cpuScore.innerHTML = cpuPoint.toString();
+        resultText.innerHTML=`You chose ` + userInput + ` and the Computer chose ` + cpuInput + `. YOU LOSE!`;
         return
     } else {
         resultText.innerHTML= `DRAW!`;
