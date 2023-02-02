@@ -10,29 +10,53 @@
 <body>
 
     <!-- form to choose total rounds -->
-    <section>
-        <p>how many rounds?</p>
+    <section class="howManyRounds" id="roundsSelectorSection">
+        <p>How many rounds?</p>
         <form action="">
-            <input type="radio" name="fiveRounds" id="fiveRounds">
-            <input type="radio" name="fiveRounds" id="tenRounds">
-            <input type="radio" name="fiveRounds" id="fifteenRounds">
-            <input type="radio" name="fiveRounds" id="twentyRounds">
+            <section id="roundsFormSection" >
+                <input type="radio" name="fiveRounds" id="fiveRounds"> <label for="fiveRounds">5</label>
+                <input type="radio" name="fiveRounds" id="tenRounds"> <label for="tenRounds">10</label>
+                <input type="radio" name="fiveRounds" id="fifteenRounds"> <label for="fifteenRounds">15</label>
+                <input type="radio" name="fiveRounds" id="twentyRounds"> <label for="twentyRounds">20</label>
+            </section>
         </form>
+        <!-- hidden rounds counter -->
+            <section id="hiddenSection">
+                <p id="hiddenRound"></p>
+            </section>
+            
     </section>
 
-    <!-- hidden rounds counter section -->
-    <section>
-        <h2>how many rounds?</h2>
-    </section>
+
+
     
     <!-- score counter -->
-    <section id="scoreCount"></section>
+    <section id="scoreCount">
+        <p>YOU</p>
+        <p class="resultScore" id="player">0</p>
+        <p>:</p>
+        <p class="resultScore" id="cpu">0</p>
+        <p>COMPUTER</p>
+    </section>
 
     <!-- Let's Play text that disappears once the game starts -->
-    <p>Let's play</p>
+
+    <p id="letsPlay">Let's play</p>
+
 
     <!-- Rock Paper Scissor Buttons -->
-    
+    <section class="buttonsSection">
+        <button class="buttons" id="rock" value="Rock">🪨</button>
+        <button class="buttons" id="paper" value="Paper">🧻</button>
+        <button class="buttons" id="scissor" value="Scissor">✂️</button>
+    </section>
+
+    <h2 id="makeMove">MAKE YOUR MOVE.</h2>
+
+    <section id="restartSection">
+        <a href="./index.html" id="restart">restart</a>
+    </section>
+
 
     <script src="./assets/js/main.js"></script>
 </body>

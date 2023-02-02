@@ -1,3 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 500px;
+  margin: 0 auto;
+}
+
+section {
+  width: 300px;
+}
+
+/* how many rounds */
+.howManyRounds {
+  height: 200px;
+  text-align: center;
+  align-items: center;
+  border: 1px solid grey;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+#roundsForm {
+  align-items: center;
+}
+
+/* hidden Rounds Counter */
+#roundcounter {
+  display: none;
+  /* display:block; damit es wieder erscheint */
+}
+
+/* Score Counter */
+#scoreCount {
+  border: 1px solid grey;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 50px;
+}
+
+/* Let's Play Text */
+#letsPlay {
+  width: 300px;
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 50px;
+}
+
+/* Rock Paper Scissor Buttons */
+.buttonsSection {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.buttons {
+  font-size: 2.5rem;
+  background: none;
+  border: 2px solid grey;
+  border-radius: 100px;
+  width: 80px;
+}
+
+/* Make Your Move Text */
+#makeMove {
+  width: 300px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* restart button */
+#restartSection {
+  text-align: center;
+}
 
 /*# sourceMappingURL=style.css.map */
